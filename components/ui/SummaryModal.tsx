@@ -13,11 +13,12 @@ import {
 } from "@/components/ui/dialog";
 import { Appointment } from "@/types/appwrite.types";
 
-import { AppointmentForm } from "./forms/AppointmentForm";
+// import { AppointmentForm } from "./forms/AppointmentForm";
 
-import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
+// import { AppointmentForm } from "../forms/AppointmentForm";
 
-export const AppointmentModal = ({
+export const SummaryModal = ({
   patientId,
   userId,
   appointment,
@@ -26,7 +27,7 @@ export const AppointmentModal = ({
   patientId: string;
   userId: string;
   appointment?: Appointment;
-  type: "schedule" | "cancel";    
+  type: "schedule" | "summary";
   title: string;
   description: string;
 }) => {
@@ -44,19 +45,19 @@ export const AppointmentModal = ({
       </DialogTrigger>
       <DialogContent className="shad-dialog sm:max-w-md">
         <DialogHeader className="mb-4 space-y-3">
-          <DialogTitle className="capitalize">{type} Appointment</DialogTitle>
+          <DialogTitle className="capitalize">Summary</DialogTitle>
           <DialogDescription>
-            Please fill in the following details to {type} appointment
+            This is a summary of the appointment
           </DialogDescription>
         </DialogHeader>
-
-        <AppointmentForm
+        
+        {/* <AppointmentForm
           userId={userId}
           patientId={patientId}
           type={type}
           appointment={appointment}
           setOpen={setOpen}
-        />
+        /> */}
       </DialogContent>
     </Dialog>
   );

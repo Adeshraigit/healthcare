@@ -101,6 +101,7 @@ export const AppointmentForm = ({
             cancellationReason: values.cancellationReason,
           },
           type,
+          timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone, 
         };
 
         const updatedAppointment = await updateAppointment(appointmentToUpdate);
@@ -190,8 +191,8 @@ export const AppointmentForm = ({
                 fieldType={FormFieldType.TEXTAREA}
                 control={form.control}
                 name="note"
-                label="Comments/notes"
-                placeholder="Prefer afternoon appointments, if possible"
+                label="Summary"
+                placeholder="Your AI "
                 disabled={type === "schedule"}
               />
             </div>
